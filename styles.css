@@ -3,6 +3,7 @@
     --black: #000000;
     --beige: #FFF3E3;
     --mustard-yellow: #B88E2F;
+    --mustard-yellow-hover: #997624;
     --dark-grey: #333333;
     --grey: #666;
     --grey-asphalt: #3A3A3A;
@@ -15,6 +16,10 @@
     --grey-footer: rgba(0, 0, 0, 0.17);
     --footer-text: #9F9F9F;
     --font-Poppins: Poppins;
+}
+
+.font-poppins {
+    font-family: var(--font-Poppins);
 }
 
 .link {
@@ -142,6 +147,10 @@
     line-height: normal;
     text-transform: uppercase;
     border: none;
+}
+
+.button-size-l:hover, .photo__botton:hover, .button__next_item:hover {
+    background-color: var(--mustard-yellow-hover);
 }
 
 .range {
@@ -336,6 +345,10 @@
     font-weight: 600;
     line-height: 150%;
     margin: 30px 0 0 0;
+}
+
+.products__button:hover {
+    background-color: var(--light-grey);
 }
 
 .photo {
@@ -534,52 +547,79 @@
     line-height: 120%;
 }
 
-.furniture__flex {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.flex_col1 {
-    display: flex;
-}
-
-.furniture {
-    margin: 70px 0 70px 0;
+.furniture__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
 }
 
 .furniture_room {
     width: 274px;
     height: 382px;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
 }
 
 .furniture_table {
     width: 451px;
     height: 312px;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
 }
 
 .furniture_diningroom {
     width: 295px;
     height: 392px;
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 2;
     align-self: center;
 }
 
 .furniture_bedroom {
     width: 290px;
     height: 348px;
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 1;
 }
 
 .furniture_eatery {
     height: 433px;
+    grid-column: 6 / span 1;
+    grid-row: 1 / span 1;
 }
 
 .furniture_vase {
     width: 344px;
     height: 242px;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    justify-self: center;
 }
 
 .furniture_chear {
     height: 380px;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    justify-self: end;
+}
+
+.furniture_picture {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.furniture_kitchen {
+    grid-column: 5 / 7;
+    grid-row: 2 / span 1;
+}
+
+.furniture_chear, .furniture_vase, .furniture_picture, .furniture_kitchen {
+    align-self: start;
+}
+
+.furniture_room, .furniture_table, .furniture_bedroom, .furniture_eatery {
+    align-self: end;
 }
 
 .footer {
@@ -663,6 +703,13 @@
     background-color: var(--white);
 }
 
+@media screen and (min-width: 1440px) {
+    .furniture__grid {
+        max-width: 1680px;
+        margin: auto;
+    }
+}
+
 @media screen and (max-width: 1441px) {
     .navigation__item {
         padding: 0 40px 0 0;
@@ -673,17 +720,11 @@
     .range__image_gallery {
         max-width: 100%;
     }
-    .furniture_room, .furniture_table, .furniture_diningroom, .furniture_bedroom, .furniture_eatery, .furniture_chear, .furniture_vase, .furniture_picture, .furniture_kitchen  {
-        position: static;
-    }
 }
 
 @media screen and (max-width: 1024px) {
     .range__image_gallery {
         max-width: 100%;
-    }
-    .furniture_room, .furniture_table, .furniture_diningroom, .furniture_bedroom, .furniture_eatery, .furniture_chear, .furniture_vase, .furniture_picture, .furniture_kitchen  {
-        position: static;
     }
     .img_2, .img_3 {
         width: 50px;
@@ -697,5 +738,122 @@
 @media screen and (max-width: 768px) {
     .img_2, .img_3 {
         display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .furniture__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr auto;
+        justify-items: center;
+        align-items: center;
+    }
+    .furniture_room {
+        grid-area: 1 / 1 / span 1/ span 1;
+    }
+    .furniture_table {
+        grid-area: 1 / 2 / span 1/ span 1;
+    }
+    .furniture_chear {
+        grid-area: 1 / 3 / span 1/ span 1;
+    }
+    .furniture_eatery {
+        grid-area: 2 / 1 / span 1/ span 1;
+    }
+    .furniture_diningroom {
+        grid-area: 2 / 2 / span 1/ span 1;
+    }
+    .furniture_bedroom {
+        grid-area: 2 / 3 / span 1/ span 1;
+    }
+    .furniture_vase {
+        grid-area: 3 / 1 / span 1/ span 1;
+    }
+    .furniture_picture {
+        grid-area: 3 / 2 / span 1/ span 1;
+    }
+    .furniture_kitchen {
+        grid-area: 3 / 3 / span 1 / span 1;
+    }
+    .furniture_chear, .furniture_vase, .furniture_picture, .furniture_kitchen {
+        align-self: center;
+    }
+
+    .furniture_room, .furniture_table, .furniture_bedroom, .furniture_eatery {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .furniture__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        justify-items: center;
+        align-items: center;
+    }
+    .furniture_room {
+        grid-area: 1 / 1 / span 1/ span 1;
+    }
+    .furniture_table {
+        grid-area: 5 / 1 / span 1/ span 2;
+    }
+    .furniture_chear {
+        grid-area: 1 / 2 / span 1/ span 1;
+        justify-self: center;
+    }
+    .furniture_eatery {
+        grid-area: 2 / 1 / span 1/ span 1;
+    }
+    .furniture_diningroom {
+        grid-area: 2 / 2 / span 1/ span 1;
+    }
+    .furniture_bedroom {
+        grid-area: 3 / 2 / span 1/ span 1;
+    }
+    .furniture_vase {
+        grid-area: 3 / 1 / span 1/ span 1;
+    }
+    .furniture_picture {
+        grid-area: 4 / 1 / span 1/ span 1;
+    }
+    .furniture_kitchen {
+        grid-area: 4 / 2 / span 1 / span 1;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .furniture__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto;
+        justify-items: center;
+        align-items: center;
+    }
+    .furniture_room {
+        grid-area: 1 / 1 / span 1/ span 1;
+    }
+    .furniture_table {
+        grid-area: 2 / 1 / span 1/ span 1;
+    }
+    .furniture_chear {
+        grid-area: 3 / 1 / span 1/ span 1;
+        justify-self: center;
+    }
+    .furniture_eatery {
+        grid-area: 4 / 1 / span 1/ span 1;
+    }
+    .furniture_diningroom {
+        grid-area: 5 / 1 / span 1/ span 1;
+    }
+    .furniture_bedroom {
+        grid-area: 6 / 1 / span 1/ span 1;
+    }
+    .furniture_vase {
+        grid-area: 7 / 1 / span 1/ span 1;
+    }
+    .furniture_picture {
+        grid-area: 8 / 1 / span 1/ span 1;
+    }
+    .furniture_kitchen {
+        grid-area: 9 / 1 / span 1 / span 1;
     }
 }
