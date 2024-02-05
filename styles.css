@@ -199,7 +199,6 @@
     width: 100%;
     height: 508px;
     border-radius: 10px;
-
 }
 
 .gallery__desc {
@@ -744,6 +743,12 @@
     .range__image_gallery {
         max-width: 100%;
     }
+    .range__gallery {
+        width: 300px
+    }
+    .range__image {
+        height: auto;
+    }
     .furniture__grid {
         max-width: 1155px;
         margin: auto;
@@ -874,6 +879,9 @@
     .range__image_gallery {
         max-width: 100%;
     }
+    .range__gallery {
+        width: 230px
+    }
     .img_2, .img_3 {
         width: 50px;
         object-fit: cover;
@@ -917,6 +925,11 @@
         box-shadow: none;
         box-sizing: border-box;
         padding: 30px 0 0 30px;
+    }
+    .range__image_gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
     .img_2, .img_3 {
         display: none;
