@@ -667,8 +667,10 @@
     margin: 50px 0 0 0;
 }
 
-.footer__link {
-    margin: 0 0 46px 0;
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
 }
 
 .a_link, .footer__text {
@@ -693,13 +695,19 @@
     margin: auto;
     max-width: 80%;
     display: flex;
-    justify-content: space-between;
+    gap: 70px;
+    padding: 0 0 30px 0;
 }
 
 .footer__menu__links {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.footer__all_links {
+    display: flex;
+    gap: 80px;
 }
 
 .footer__text {
@@ -709,11 +717,15 @@
     padding: 20px 0 0 0;
 }
 
+.footer__form {
+    display: flex;
+    gap: 10px;
+}
+
 .form__input {
     border: none;
     border-bottom: 1px solid var(--black);
-    width: 200px;
-    margin: 0 5px 0 0;
+    width: 160px;
 }
 
 .form__button {
@@ -857,7 +869,12 @@
         width: 105px;
         height: auto;
     }
-
+    .footer_menu {
+        max-width: 95%;
+    }
+    .footer__text {
+        max-width: 95%;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -892,6 +909,13 @@
     }
     .title-size-l {
         max-width: 60%;
+    }
+    .footer__form {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .form__button {
+        width: 90px;
     }
 }
 
@@ -976,6 +1000,30 @@
     .furniture_room, .furniture_table, .furniture_bedroom, .furniture_eatery {
         align-self: center;
     }
+    .footer_menu {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer__subtheme {
+        max-width: 100%;
+    }
+    .footer__all_links {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .menu__theme {
+        margin: 0;
+    }
+    .form__input {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer__all_links {
+        justify-content: center;
+        gap: 30px;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -1016,6 +1064,18 @@
     }
     .furniture_kitchen {
         grid-area: 4 / 2 / span 1 / span 1;
+    }
+    .footer__all_links {
+        width: 100%;
+        flex-direction: column;
+    }
+    .menu__links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .footer__form, .footer__menu__links {
+        margin: 20px 0 0 0;
     }
 }
 
