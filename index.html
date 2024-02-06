@@ -265,7 +265,18 @@
             <div class="photo__gallery">
                 <div class="photo__slider">
                     <div class="photo__active">
-                        <img src="images/room_1.png" alt="Bedroom" class="active_image">
+                        <div class="slides">
+                            <img src="images/room_1.png" alt="Bedroom" class="active_image" id="active_img">
+                        </div>
+                        <div class="slides">
+                            <img src="images/room_2.png" alt="Kitchen" class="active_image" id="active_img">
+                        </div>
+                        <div class="slides">
+                            <img src="images/room_3.png" alt="Room" class="active_image" id="active_img">
+                        </div>
+                        <div class="slides">
+                            <img src="images/furniture_room.png" alt="Room" class="active_image" id="active_img">
+                        </div>
                         <div class="photo__inform">
                             <div class="inform__text">
                                 <div class="text__item">01</div>
@@ -283,19 +294,25 @@
                     <div class="photo-flex">
                         <div class="photo__images">
                             <div class="photo__not_active not_active_1">
-                                <img src="images/room_2.png" alt="Kitchen" class="photo__img img_2">
+                                <img src="images/room_2.png" alt="Kitchen" class="photo__img img_2" id="img_2">
                             </div>
                             <div class="photo__not_active not_active_2">
-                                <img src="images/room_3.png" alt="Room" class="photo__img img_3">
+                                <img src="images/room_3.png" alt="Room" class="photo__img img_3" id="img_3">
+                            </div>
+                            <div class="photo__not_active not_active_2">
+                                <img src="images/furniture_room.png" alt="Room" class="photo__img img_4" id="img_4">
+                            </div>
+                            <div class="photo__not_active not_active_2">
+                                <img src="images/room_1.png" alt="Bedroom" class="photo__img img_4" id="img_4">
                             </div>
                         </div>
                         <div class="photo__mark">
                             <ul class="ul_mark_item">
-                                <li class="mark__item">
+                                <li class="mark__item active-mark">
                                     <img src="images/active_mark.png" alt="active mark" class="active_mark">
                                 </li>
                                 <li class="mark__item disable-mark">
-                                    <img src="images/not_active_mark.png" alt="not active mark" class="not_active_mark">
+                                    <img src="images/not_active_mark.png" alt="not active mark" class="not_active_mark mark_1">
                                 </li>
                                 <li class="mark__item disable-mark">
                                     <img src="images/not_active_mark.png" alt="not active mark" class="not_active_mark mark_2">
@@ -308,7 +325,7 @@
                     </div> 
                 </div>
                 <div class="switcher">
-                    <button class="button__switch">
+                    <button onclick="plusSlides(1)" class="button__switch">
                         <div class="ellipse__switch">
                             <img src="images/right_button.png" alt="right button switch" class="switch">
                         </div>
@@ -389,5 +406,9 @@
                 2023 furino. All rights reverved
             </div>
         </footer>
+<<<<<<< HEAD
+    <script src="script.js"></script>
+=======
+>>>>>>> d7cb5bca8ef50d0cfa0c2dc400bfca808008744c
 </body>
 </html>
